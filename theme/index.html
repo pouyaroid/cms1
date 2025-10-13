@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+	<head>
+		<title>قالب رامَن</title>
+
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+		<meta name="publisher" content="قالب رامَن" />
+		<meta name="title" content="قالب رامَن" />
+		<meta name="description" content="قالب رامَن" />
+
+		<meta http-equiv="content-language" content="fa" />
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+		<link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+
+		<link rel="stylesheet" href="assets/fonts/@mdi/css/materialdesignicons.min.css" />
+
+		<link id="bootstraplink" rel="stylesheet" href="assets/css/bootstrap-5.2.0/css/bootstrap.rtl.min.css" />
+
+		<script src="assets/js/jquery.min.js"></script>
+
+		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+		<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+		<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.3.2/countUp.umd.min.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.min.js"></script>
+
+		<link rel="stylesheet" href="assets/css/styles.min.css" />
+		<link rel="stylesheet" href="assets/css/index.min.css" />
+	</head>
+
+	<body class="theme-middle-blue">
+		<div class="preloader">
+			<div class="loader">
+				<div class="dot"></div>
+				<div class="dot"></div>
+				<div class="dot"></div>
+				<div class="dot"></div>
+				<div class="dot"></div>
+			</div>
+		</div>
+
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<div class="container">
+				<button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<a href="/">
+					<img class="logo" src="assets/images/logo.png" />
+				</a>
+
+				<div class="collapse navbar-collapse" id="navbarToggler">
+					<ul class="navbar-nav navbar-items list-unstyled d-flex flex-column flex-md-row mb-0">
+						<li class="nav-item">
+							<a class="nav-link active lh-lg py-2 px-3" href="index.html">خانه</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link lh-lg py-2 px-3" href="blog.html">وبلاگ</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link lh-lg py-2 px-3" href="#products">محصولات</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link lh-lg py-2 px-3" href="#pricing">تعرفه ها</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link lh-lg py-2 px-3" href="#portfolio">نمونه کارها</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link lh-lg py-2 px-3" href="#faq">پرسش‌های متداول</a>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link lh-lg py-2 px-3" data-bs-toggle="dropdown" aria-expanded="false">درباره ما</a>
+							<ul class="dropdown-menu list-unstyled mb-0">
+								<li class="nav-item">
+									<a class="nav-link lh-lg py-2 px-3" href="#aboutus">درباره ما</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link lh-lg py-2 px-3" href="#contactus">تماس با ما</a>
+								</li>
+							</ul>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link fw-bold lh-lg py-2 px-3" href="https://www.rtl-theme.com/raman-html-template/">خرید قالب!</a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="theme-dropdown dropdown d-none d-md-flex">
+					<a class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+						<span class="theme-picker theme-picker-all"></span>
+					</a>
+					<ul class="dropdown-menu">
+						<li>
+							<a class="dropdown-item" href="#" onclick="setTheme('theme-middle-blue')"><span class="theme-picker theme-picker-1"></span></a>
+						</li>
+						<li>
+							<a class="dropdown-item" href="#" onclick="setTheme('theme-panton')"><span class="theme-picker theme-picker-2"></span></a>
+						</li>
+						<li>
+							<a class="dropdown-item" href="#" onclick="setTheme('theme-persian-green')"><span class="theme-picker theme-picker-3"></span></a>
+						</li>
+						<li>
+							<a class="dropdown-item" href="#" onclick="setTheme('theme-blue-cola')"><span class="theme-picker theme-picker-4"></span></a>
+						</li>
+						<li>
+							<a class="dropdown-item" href="#" onclick="setTheme('theme-cameo')"><span class="theme-picker theme-picker-5"></span></a>
+						</li>
+						<li>
+							<a class="dropdown-item" href="#" onclick="setTheme('theme-cameo')"><span class="theme-picker theme-picker-5"></span></a>
+						</li>
+					</ul>
+
+					<a class="lang link ms-2" onclick="changeLang(this)" data-lang="en-US"> EN </a>
+				</div>
+			</div>
+		</nav>
+
+		<section id="main" class="main pb-5">
+			<div class="container d-flex flex-column-reverse flex-md-row">
+				<div class="d-block col-12 col-md-4 pt-5 mb-lg-0" data-aos="fade-left">
+					<span class="d-block">کسب و کار آنلاینت رو راه اندازی کن</span>
+					<h1 class="font-pinar h2 lh-lg mb-4">روش های کاربردی کسب درآمد آنلاین</h1>
+					<p class="lh-lg mb-5"> ارائه دهنده ابزارهای لازم برای راه اندازی کسب و کار آنلاین در <span class="font-iransans-black hightlight">کمترین زمان و با کمترین هزینه</span> </p>
+
+					<a class="btn btn-primary me-2" href="login.html">
+						شروع کنید
+						<i class="mdi mdi-arrow-left mdi-18px"></i>
+					</a>
+					<a class="btn btn-primary-outline" href="#">
+						<i class="mdi mdi-phone-in-talk-outline mdi-18px"></i>
+						مشاوره بگیرید
+					</a>
+				</div>
+
+				<div class="image-container d-flex flex-row justify-content-end col-12 col-md-8">
+					<div class="box">
+						<div class="overflow-hidden">
+							<img class="image" src="./assets/images/woman1.png" />
+						</div>
+					</div>
+				</div>
+
+				<div class="shape-bg">
+					<img src="./assets/images/shape5.png" />
+				</div>
+			</div>
+		</section>
+
+		<section id="whyus" class="why-us">
+			<div class="container d-flex flex-column-reverse flex-md-row overflow-hidden py-5">
+				<div class="box d-block col-12 p-4 mb-5" data-aos="fade-left">
+					<div class="title d-flex flex-column flex-md-row flex-wrap justify-content-between text-white pt-4">
+						<h3 class="font-iransans-black col-12 col-md-6 my-0">چرا ما؟</h3>
+						<span class="d-block font-iransans-bold col-12 col-md-6 lh-lg">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده ا‌‌‌ز طراحان گرافیک است</span>
+					</div>
+
+					<div class="dot"></div>
+
+					<ul class="list list-unstyled d-flex flex-row flex-wrap justify-content-center font-iransans-medium px-0 px-md-5 mb-0">
+						<li class="list-item col-12 col-md-6 col-lg-3 p-2">
+							<div class="card h-100">
+								<div class="header p-4">
+									<i class="mdi mdi-bullseye-arrow mdi-48px ms-2"></i>
+								</div>
+								<div class="body p-4 pt-0">
+									<small class="d-block lh-lg">بروزترین و کاربردی ترین روش‌ها با پشتیبانی کامل</small>
+								</div>
+							</div>
+						</li>
+						<li class="list-item col-12 col-md-6 col-lg-3 p-2">
+							<div class="card h-100">
+								<div class="header p-4">
+									<i class="mdi mdi-lightbulb-on-outline mdi-48px ms-2"></i>
+								</div>
+								<div class="body p-4 pt-0">
+									<small class="d-block lh-lg">کسب درآمد خیلی سریع و بی دردسر</small>
+								</div>
+							</div>
+						</li>
+						<li class="list-item col-12 col-md-6 col-lg-3 p-2">
+							<div class="card h-100">
+								<div class="header p-4">
+									<i class="mdi mdi-bullhorn-variant-outline mdi-48px ms-2"></i>
+								</div>
+								<div class="body p-4 pt-0">
+									<small class="d-block lh-lg">آپدیت‌های منظم، خدمات پس از فروش و مشاوره</small>
+								</div>
+							</div>
+						</li>
+						<li class="list-item col-12 col-md-6 col-lg-3 p-2">
+							<div class="card h-100">
+								<div class="header p-4">
+									<i class="mdi mdi-trophy-outline mdi-48px ms-2"></i>
+								</div>
+								<div class="body p-4 pt-0">
+									<small class="d-block lh-lg">فراگیری شروع کسب‌و‌کار یک نفره</small>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<section id="customers" class="customers overflow-hidden pb-5">
+			<div class="container d-block">
+				<div class="employer-slider" data-aos="fade-down-right">
+					<a class="link employer-link d-flex flex-row justify-content-center align-items-center" href="#" target="_blank" rel="noopener">
+						<img class="employer-logo" src="assets/images/customers/amazon.svg" />
+					</a>
+					<a class="link employer-link d-flex flex-row justify-content-center align-items-center" href="#" target="_blank" rel="noopener">
+						<img class="employer-logo" src="assets/images/customers/google.svg" />
+					</a>
+					<a class="link employer-link d-flex flex-row justify-content-center align-items-center" href="#" target="_blank" rel="noopener">
+						<img class="employer-logo" src="assets/images/customers/lenovo.svg" />
+					</a>
+					<a class="link employer-link d-flex flex-row justify-content-center align-items-center" href="#" target="_blank" rel="noopener">
+						<img class="employer-logo" src="assets/images/customers/microsoft.svg" />
+					</a>
+					<a class="link employer-link d-flex flex-row justify-content-center align-items-center" href="#" target="_blank" rel="noopener">
+						<img class="employer-logo" src="assets/images/customers/paypal.svg" />
+					</a>
+					<a class="link employer-link d-flex flex-row justify-content-center align-items-center" href="#" target="_blank" rel="noopener">
+						<img class="employer-logo" src="assets/images/customers/shopify.svg" />
+					</a>
+					<a class="link employer-link d-flex flex-row justify-content-center align-items-center" href="#" target="_blank" rel="noopener">
+						<img class="employer-logo" src="assets/images/customers/spotify.svg" />
+					</a>
+				</div>
+			</div>
+		</section>
+
+		<section id="products" class="products position-relative alternate overflow-hidden py-5">
+			<div class="container d-block">
+				<div class="title d-flex flex-column flex-md-row flex-wrap justify-content-between pt-5 px-3">
+					<h3 class="line font-iransans-black col-12 col-md-6 my-0"> محصولات ما </h3>
+
+					<span class="d-block col-12 col-md-6 lh-lg">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</span>
+				</div>
+
+				<div class="shape-bg">
+					<img src="./assets/images/shape5.png" />
+				</div>
+
+				<div class="d-flex flex-column flex-md-row justify-content-start pt-5">
+					<div class="d-block col-12 col-lg-3 col-md-4 p-3">
+						<div class="card d-flex flex-column justify-content-between align-items-center h-100 p-3">
+							<h4 class="font-iransans-black">محصولات ویژه</h4>
+							<img class="special-img my-4" src="assets/images/discount.svg" />
+							<span class="d-block mb-3">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</span>
+							<a class="btn btn-primary w-100" href="product.html"> مشاهده همه </a>
+						</div>
+					</div>
+
+					<div class="col-12 col-lg-9 col-md-8">
+						<div class="products-slider">
+							<div class="products-slider-item products-slider-item-1 col-3 p-3 mb-4">
+								<div class="card p-2">
+									<div class="header d-flex flex-row justify-content-center pt-3 mb-3">
+										<img class="img" src="./assets/images/man1.png" />
+									</div>
+									<div class="body mb-3">
+										<span class="d-block small lh-base px-2 mb-3">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</span>
+										<h6 class="d-block font-iransans-black text-center">250,000,000 <small>تومان</small></h6>
+									</div>
+								</div>
+								<a class="btn btn-primary" href="product-detail.html">مشاهده</a>
+							</div>
+							<div class="products-slider-item products-slider-item-2 col-3 p-3 mb-4">
+								<div class="card p-2">
+									<div class="header d-flex flex-row justify-content-center pt-3 mb-3">
+										<img class="img" src="./assets/images/woman2.png" />
+									</div>
+									<div class="body mb-3">
+										<span class="d-block small lh-base px-2 mb-3">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</span>
+										<h6 class="d-block font-iransans-black text-center">250,000,000 <small>تومان</small></h6>
+									</div>
+								</div>
+								<a class="btn btn-primary" href="product-detail.html">مشاهده</a>
+							</div>
+							<div class="products-slider-item products-slider-item-3 col-3 p-3 mb-4">
+								<div class="card p-2">
+									<div class="header d-flex flex-row justify-content-center pt-3 mb-3">
+										<img class="img" src="./assets/images/man1.png" />
+									</div>
+									<div class="body mb-3">
+										<span class="d-block small lh-base px-2 mb-3">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</span>
+										<h6 class="d-block font-iransans-black text-center">250,000,000 <small>تومان</small></h6>
+									</div>
+								</div>
+								<a class="btn btn-primary" href="product-detail.html">مشاهده</a>
+							</div>
+							<div class="products-slider-item products-slider-item-4 col-3 p-3 mb-4">
+								<div class="card p-2">
+									<div class="header d-flex flex-row justify-content-center pt-3 mb-3">
+										<img class="img" src="./assets/images/man2.png" />
+									</div>
+									<div class="body mb-3">
+										<span class="d-block small lh-base px-2 mb-3">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</span>
+										<h6 class="d-block font-iransans-black text-center">250,000,000 <small>تومان</small></h6>
+									</div>
+								</div>
+								<a class="btn btn-primary" href="product-detail.html">مشاهده</a>
+							</div>
+							<div class="products-slider-item products-slider-item-5 col-3 p-3 mb-4">
+								<div class="card p-2">
+									<div class="header d-flex flex-row justify-content-center pt-3 mb-3">
+										<img class="img" src="./assets/images/man1.png" />
+									</div>
+									<div class="body mb-3">
+										<span class="d-block small lh-base px-2 mb-3">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</span>
+										<h6 class="d-block font-iransans-black text-center">250,000,000 <small>تومان</small></h6>
+									</div>
+								</div>
+								<a class="btn btn-primary" href="product-detail.html">مشاهده</a>
+							</div>
+							<div class="products-slider-item products-slider-item-6 col-3 p-3 mb-4">
+								<div class="card p-2">
+									<div class="header d-flex flex-row justify-content-center pt-3 mb-3">
+										<img class="img" src="./assets/images/woman2.png" />
+									</div>
+									<div class="body mb-3">
+										<span class="d-block small lh-base px-2 mb-3">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</span>
+										<h6 class="d-block font-iransans-black text-center">250,000,000 <small>تومان</small></h6>
+									</div>
+								</div>
+								<a class="btn btn-primary" href="product-detail.html">مشاهده</a>
+							</div>
+							<div class="products-slider-item products-slider-item-7 col-3 p-3 mb-4">
+								<div class="card p-2">
+									<div class="header d-flex flex-row justify-content-center pt-3 mb-3">
+										<img class="img" src="./assets/images/man2.png" />
+									</div>
+									<div class="body mb-3">
+										<span class="d-block small lh-base px-2 mb-3">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</span>
+										<h6 class="d-block font-iransans-black text-center">250,000,000 <small>تومان</small></h6>
+									</div>
+								</div>
+								<a class="btn btn-primary" href="product-detail.html">مشاهده</a>
+							</div>
+							<div class="products-slider-item products-slider-item-8 col-3 p-3 mb-4">
+								<div class="card p-2">
+									<div class="header d-flex flex-row justify-content-center pt-3 mb-3">
+										<img class="img" src="./assets/images/man1.png" />
+									</div>
+									<div class="body mb-3">
+										<span class="d-block small lh-base px-2 mb-3">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</span>
+										<h6 class="d-block font-iransans-black text-center">250,000,000 <small>تومان</small></h6>
+									</div>
+								</div>
+								<a class="btn btn-primary" href="product-detail.html">مشاهده</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="aboutus" class="about-us position-relative alternate py-5">
+			<div class="container d-block" data-aos="fade-down-right">
+				<div class="shape-bg">
+					<img src="./assets/images/shape5.png" />
+				</div>
+
+				<div class="d-flex flex-column flex-md-row flex-wrap justify-content-start align-items-center text-center">
+					<div class="col-12 col-lg-3 col-md-6 p-3">
+						<div class="card d-flex flex-row justify-content-center align-items-center mt-0 mt-md-5">
+							<div class="body">
+								<h1 id="val1" class="font-iransans-black my-3" data-value="33"></h1>
+								<span class="d-block">محصول</span>
+							</div>
+						</div>
+					</div>
+					<div class="col-12 col-lg-3 col-md-6 p-3">
+						<div class="card d-flex flex-row justify-content-center align-items-center p-4 mt-0 mt-md-2">
+							<div class="body">
+								<h1 id="val2" class="font-iransans-black my-3" data-value="7000"></h1>
+								<span class="d-block">تعداد مشتریان</span>
+							</div>
+						</div>
+					</div>
+					<div class="col-12 col-lg-3 col-md-6 p-3">
+						<div class="card d-flex flex-row justify-content-center align-items-center p-4 mt-0 mt-md-5">
+							<div class="body">
+								<h1 id="val3" class="font-iransans-black my-3" data-value="18"></h1>
+								<span class="d-block">مدرس</span>
+							</div>
+						</div>
+					</div>
+					<div class="col-12 col-lg-3 col-md-6 p-3">
+						<div class="card d-flex flex-row justify-content-center align-items-center p-4">
+							<div class="body">
+								<h1 id="val4" class="font-iransans-black my-3" data-value="15400"></h1>
+								<span class="d-block">نظر شرکت کننده</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="d-flex flex-column flex-md-row flex-wrap justify-content-start align-items-center pt-5">
+					<div class="d-flex flex-column-reverse flex-md-row flex-wrap justify-content-start pt-5">
+						<div class="position-relative col-12 col-md-6">
+							<div class="image-container d-flex flex-row justify-content-center col-12 col-md-8 w-100">
+								<div class="box"> </div>
+							</div>
+							<img class="image" src="./assets/images/man.png" />
+						</div>
+						<div class="col-12 col-md-6 mb-5 mb-md-0">
+							<h3 class="line font-iransans-black mb-3"> درباره ما </h3>
+
+							<p class="d-block lh-lg">
+								هدف ما کمک به رشد کسب و کارها با ایجاد یک رابطه خوب به‌وسیله مکالمه مستقیم و بدون واسطه مشتریان با شرکت شماست. مشتریان راضی‌تر و فروش بیشتر شرکت شما از اولویت‌های ماست. ما در بستر یک پلتفرم و کاملا واکنشگرا طراحی شده
+								که می‌توانید از طریق کامپیوتر شخصی، موبایل و یا با تبلت خودتون در هر کجا که خواستید ازش استفاده کنید. هنوز اول راهیم هدف ما کمک به رشد کسب و کارها با ایجاد یک رابطه خوب به‌وسیله مکالمه مستقیم و بدون واسطه مشتریان با
+								شرکت شماست. مشتریان راضی‌تر و فروش بیشتر شرکت شما از اولویت‌های ماست. ما در بستر یک پلتفرم و کاملا واکنشگرا طراحی شده که می‌توانید از طریق کامپیوتر شخصی، موبایل و یا با تبلت خودتون در هر کجا که خواستید ازش استفاده
+								کنید. هنوز اول راهیم...
+							</p>
+						</div>
+					</div>
+
+					<div class="contact-us d-flex flex-column flex-md-row flex-wrap justify-content-between w-100 p-5">
+						<div class="d-block mt-5 mt-md-0"></div>
+						<div class="contact-us-phone d-flex flex-column flex-md-row flex-wrap justify-content-center align-items-center mt-5 mt-md-0">
+							<span class="font-iransans-black d-block mx-4 mb-4 mb-md-0">نیاز به مشاوره دارید؟</span>
+							<a class="btn btn-secondary font-iransans-black rounded-5" href="tel:+982178355412">
+								02178355412
+								<i class="mdi mdi-phone-in-talk-outline mdi-18px"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="news" class="news position-relative alternate overflow-hidden py-5">
+			<div class="container d-block" data-aos="fade-down-left">
+				<div class="d-flex flex-column flex-md-row flex-wrap justify-content-between align-items-start py-5 px-3">
+					<h3 class="line font-iransans-black col-12 col-md-6 my-0"> آخرین مقالات </h3>
+
+					<a class="btn btn-light btn-sm" href="blog.html">
+						مشاهده همه
+						<i class="mdi mdi-arrow-left mdi-18px"></i>
+					</a>
+				</div>
+
+				<div class="d-flex flex-column flex-md-row flex-wrap justify-content-start align-items-start">
+					<div class="col-12 col-md-6 p-3">
+						<div class="card news-item news-item-1 p-2 mb-4">
+							<div class="body text-center">
+								<img class="image" src="./assets/images/woman1.png" />
+							</div>
+						</div>
+						<div class="d-flex flex-column">
+							<a class="font-iransans-bold d-block lh-lg small mb-2" href="blog-detail.html"> لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است </a>
+							<small class="d-block text-muted">26 مرداد 1401</small>
+						</div>
+					</div>
+					<div class="news-list col-12 col-md-6 p-0 p-md-3">
+						<div class="news-list-item news-item-2 d-flex flex-row align-items-start pb-2 mb-2">
+							<div class="card news-item news-item-small me-4 p-1">
+								<div class="body text-center">
+									<img class="image" src="./assets/images/man1.png" />
+								</div>
+							</div>
+							<div class="d-flex flex-column">
+								<a class="font-iransans-bold d-block lh-lg small mb-2" href="blog-detail.html"> لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است </a>
+								<small class="d-block text-muted">26 مرداد 1401</small>
+							</div>
+						</div>
+						<div class="news-list-item news-item-3 d-flex flex-row align-items-start pb-2 mb-2">
+							<div class="card news-item news-item-small me-4 p-1">
+								<div class="body text-center">
+									<img class="image" src="./assets/images/woman2.png" />
+								</div>
+							</div>
+							<div class="d-flex flex-column">
+								<a class="font-iransans-bold d-block lh-lg small mb-2" href="blog-detail.html"> لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است </a>
+								<small class="d-block text-muted">26 مرداد 1401</small>
+							</div>
+						</div>
+						<div class="news-list-item news-item-4 d-flex flex-row align-items-start pb-2 mb-2">
+							<div class="card news-item news-item-small me-4 p-1">
+								<div class="body text-center">
+									<img class="image" src="./assets/images/man2.png" />
+								</div>
+							</div>
+							<div class="d-flex flex-column">
+								<a class="font-iransans-bold d-block lh-lg small mb-2" href="blog-detail.html"> لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است </a>
+								<small class="d-block text-muted">26 مرداد 1401</small>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="opinion" class="opinion position-relative pt-5">
+			<div class="container d-flex flex-column-reverse flex-md-row overflow-hidden py-5">
+				<div class="box d-block col-12 p-4 mb-5" data-aos="fade-right">
+					<div class="title d-flex flex-column flex-md-row flex-wrap justify-content-between text-white pt-5">
+						<h3 class="font-iransans-black col-12 col-md-6 my-0">نظرات شرکت کنندگان</h3>
+						<div class="col-12 col-md-6">
+							<span class="d-block font-iransans-bold lh-lg mb-3">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</span>
+
+							<a class="btn btn-light btn-sm" href="#">
+								مشاهده همه
+								<i class="mdi mdi-arrow-left mdi-18px"></i>
+							</a>
+						</div>
+					</div>
+
+					<div class="dot1"></div>
+					<div class="dot2"></div>
+
+					<ul class="list list-unstyled d-flex flex-row flex-wrap justify-content-center font-iransans-medium px-0 px-md-5 mb-0">
+						<li class="list-item col-12 col-md-6 p-2">
+							<div class="card p-4">
+								<div class="body">
+									<small class="d-block lh-lg"> اگر اولویت کسب وکار شما ارائه خدمات با کیفیت به مشتریان‌تون با هدف بالا بردن فروش و پاسخگویی در کمترین زمان هست به نظر من سرویس های رامَن بهترین گزینه برای شما خواهد بود. </small>
+								</div>
+								<div class="footer d-flex flex-row justify-content-start align-items-start pt-4">
+									<img class="avatar" src="assets/images/user1.jpg" />
+									<small class="d-flex flex-column flex-fill px-3">
+										<span class="d-block mb-2">امیر رضایی</span>
+										<small class="d-block text-muted">شرکت کننده</small>
+									</small>
+									<small class="date rounded-5 py-1 px-2">
+										<small class="d-block text-muted">20 تیر 1401</small>
+									</small>
+								</div>
+							</div>
+						</li>
+						<li class="list-item col-12 col-md-6 p-2">
+							<div class="card p-4">
+								<div class="body">
+									<small class="d-block lh-lg">
+										سرویس های رامَن یکی از بهترین راهکارها برای کمک به افزایش نرخ تبدیل در کسب و کارهاست و به عنوان یک سرویس موفق ایرانی می تواند بستر مناسبی برای پیاده سازی فرآیند بازاریابی باشد.
+									</small>
+								</div>
+								<div class="footer d-flex flex-row justify-content-start align-items-start pt-4">
+									<img class="avatar" src="assets/images/user2.jpg" />
+									<small class="d-flex flex-column flex-fill px-3">
+										<span class="d-block mb-2">لیلا اسدی</span>
+										<small class="d-block text-muted">شرکت کننده</small>
+									</small>
+									<small class="date rounded-5 py-1 px-2">
+										<small class="d-block text-muted text-center">21 مرداد 1401</small>
+									</small>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<section id="team" class="team position-relative">
+			<div class="container d-flex flex-column-reverse flex-md-row overflow-hidden py-5">
+				<div class="box d-flex flex-row flex-wrap p-4 mb-5" data-aos="fade-left">
+					<div class="d-flex flex-column flex-md-row flex-wrap justify-content-between align-items-start col-12 col-md-4 py-5">
+						<h3 class="line font-iransans-black"> تیم ما </h3>
+
+						<p class="d-block lh-lg">
+							لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با
+							هدف بهبود ابزارهای کاربردی می باشد
+						</p>
+					</div>
+
+					<div class="col-12 col-md-8 ps-3">
+						<ul class="list-unstyled d-flex flex-row flex-wrap ps-0 mb-0">
+							<li class="col-4 p-2">
+								<div class="card p-1">
+									<div class="portfolio-item">
+										<img class="img w-100" src="assets/images/team1.jpg" />
+										<div class="item-img-overlay">
+											<small class="d-block text-muted mb-3">سئو</small>
+											<h6 class="fw-bold mb-3">رونی جفرا</h6>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="col-4 p-2">
+								<div class="card p-1">
+									<div class="portfolio-item">
+										<img class="img w-100" src="assets/images/team2.jpg" />
+										<div class="item-img-overlay">
+											<small class="d-block text-muted mb-3">تحلیلگر</small>
+											<h6 class="fw-bold mb-3">جنیفر</h6>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="col-4 p-2">
+								<div class="card p-1">
+									<div class="portfolio-item">
+										<img class="img w-100" src="assets/images/team3.jpg" />
+										<div class="item-img-overlay">
+											<small class="d-block text-muted mb-3">توسعه دهنده</small>
+											<h6 class="fw-bold mb-3">ماریا</h6>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="col-4 p-2">
+								<div class="card p-1">
+									<div class="portfolio-item">
+										<img class="img w-100" src="assets/images/team4.jpg" />
+										<div class="item-img-overlay">
+											<small class="d-block text-muted mb-3">کارگردان</small>
+											<h6 class="fw-bold mb-3">لوسی</h6>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="col-4 p-2">
+								<div class="card p-1">
+									<div class="portfolio-item">
+										<img class="img w-100" src="assets/images/team5.jpg" />
+										<div class="item-img-overlay">
+											<small class="d-block text-muted mb-3">توسعه دهنده</small>
+											<h6 class="fw-bold mb-3">میاکل</h6>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="col-4 p-2">
+								<div class="card p-1">
+									<div class="portfolio-item">
+										<img class="img w-100" src="assets/images/team6.jpg" />
+										<div class="item-img-overlay">
+											<small class="d-block text-muted mb-3">توسعه دهنده</small>
+											<h6 class="fw-bold mb-3">کالوین لورس</h6>
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="portfolio" class="portfolio position-relative py-5">
+			<div class="container d-block">
+				<h3 class="line d-block font-iransans-black"> نمونه کارهای من </h3>
+
+				<div class="button-group filters-button-group text-center my-5">
+					<button type="button" class="btn btn-light rounded-5 mx-1" data-filter="*">همه</button>
+					<button type="button" class="btn btn-light rounded-5 mx-1" data-filter=".group1">وبسایت</button>
+					<button type="button" class="btn btn-light rounded-5 mx-1" data-filter=".group2">اپ موبایل</button>
+					<button type="button" class="btn btn-light rounded-5 mx-1" data-filter=".group3">اپلیکیشن</button>
+				</div>
+
+				<div class="portfolio-grid" data-isotope='{ "itemSelector": ".portfolio-item", "layoutMode": "fitRows", "isOriginLeft": false }'>
+					<div class="portfolio-item group1 col-6 col-md-3 p-1">
+						<img class="w-100" src="assets/images/portfolio/1.jpg" />
+						<div class="item-img-overlay">
+							<small class="d-block text-muted mb-3">نمونه کار</small>
+							<h6 class="fw-bold mb-3">قالب رامَن</h6>
+							<a class="link link-theme" href="#">
+								<i class="mdi mdi-link mdi-36px"></i>
+							</a>
+						</div>
+					</div>
+					<div class="portfolio-item group2 col-6 col-md-3 p-1">
+						<img class="w-100" src="assets/images/portfolio/2.jpg" />
+						<div class="item-img-overlay">
+							<small class="d-block text-muted mb-3">نمونه کار</small>
+							<h6 class="fw-bold mb-3">قالب رامَن</h6>
+							<a class="link link-theme" href="#">
+								<i class="mdi mdi-link mdi-36px"></i>
+							</a>
+						</div>
+					</div>
+					<div class="portfolio-item group2 col-6 col-md-3 p-1">
+						<img class="w-100" src="assets/images/portfolio/3.jpg" />
+						<div class="item-img-overlay">
+							<small class="d-block text-muted mb-3">نمونه کار</small>
+							<h6 class="fw-bold mb-3">قالب رامَن</h6>
+							<a class="link link-theme" href="#">
+								<i class="mdi mdi-link mdi-36px"></i>
+							</a>
+						</div>
+					</div>
+					<div class="portfolio-item group1 col-6 col-md-3 p-1">
+						<img class="w-100" src="assets/images/portfolio/4.jpg" />
+						<div class="item-img-overlay">
+							<small class="d-block text-muted mb-3">نمونه کار</small>
+							<h6 class="fw-bold mb-3">قالب رامَن</h6>
+							<a class="link link-theme" href="#">
+								<i class="mdi mdi-link mdi-36px"></i>
+							</a>
+						</div>
+					</div>
+					<div class="portfolio-item group2 col-6 col-md-3 p-1">
+						<img class="w-100" src="assets/images/portfolio/5.jpg" />
+						<div class="item-img-overlay">
+							<small class="d-block text-muted mb-3">نمونه کار</small>
+							<h6 class="fw-bold mb-3">قالب رامَن</h6>
+							<a class="link link-theme" href="#">
+								<i class="mdi mdi-link mdi-36px"></i>
+							</a>
+						</div>
+					</div>
+					<div class="portfolio-item group1 col-6 col-md-3 p-1">
+						<img class="w-100" src="assets/images/portfolio/6.jpg" />
+						<div class="item-img-overlay">
+							<small class="d-block text-muted mb-3">نمونه کار</small>
+							<h6 class="fw-bold mb-3">قالب رامَن</h6>
+							<a class="link link-theme" href="#">
+								<i class="mdi mdi-link mdi-36px"></i>
+							</a>
+						</div>
+					</div>
+					<div class="portfolio-item group3 col-6 col-md-3 p-1">
+						<img class="w-100" src="assets/images/portfolio/7.jpg" />
+						<div class="item-img-overlay">
+							<small class="d-block text-muted mb-3">نمونه کار</small>
+							<h6 class="fw-bold mb-3">قالب رامَن</h6>
+							<a class="link link-theme" href="#">
+								<i class="mdi mdi-link mdi-36px"></i>
+							</a>
+						</div>
+					</div>
+					<div class="portfolio-item group3 col-6 col-md-3 p-1">
+						<img class="w-100" src="assets/images/portfolio/8.jpg" />
+						<div class="item-img-overlay">
+							<small class="d-block text-muted mb-3">نمونه کار</small>
+							<h6 class="fw-bold mb-3">قالب رامَن</h6>
+							<a class="link link-theme" href="#">
+								<i class="mdi mdi-link mdi-36px"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="pricing" class="pricing position-relative alternate py-5">
+			<div class="container d-block py-5" data-aos="fade-down-left">
+				<h3 class="line font-iransans-black px-2"> تعرفه قیمت ها </h3>
+
+				<div class="d-flex flex-column flex-md-row flex-wrap justify-content-start pt-5">
+					<div class="col-12 col-md-4 p-2">
+						<div class="card h-100 py-5 px-4">
+							<div class="header d-flex flex-row justify-content-start align-items-center">
+								<i class="mdi mdi-leaf mdi-24px mx-3"></i>
+								<h5 class="font-iransans-medium my-0">رایگان</h5>
+							</div>
+							<div class="body pt-3">
+								<span class="d-block small text-muted mb-3">مناسب برای شروع</span>
+								<h4 class="text-center font-pinar pt-1 mb-3">برای همیشه رایگان</h4>
+
+								<a class="btn btn-primary w-100 my-4" href="#"> شروع کنید </a>
+
+								<strong class="d-block small text-muted mb-3">امکانات بسته</strong>
+								<ul class="list-unstyled text-muted px-0 mb-0">
+									<li class="d-flex flex-row mb-2">
+										<i class="mdi mdi-check-bold justify-content-start align-items-center mx-2 text-theme"></i>
+										<small class="d-block">فضا 5 گیگابایت</small>
+									</li>
+									<li class="d-flex flex-row mb-2">
+										<i class="mdi mdi-check-bold justify-content-start align-items-center mx-2 text-theme"></i>
+										<small class="d-block">ارسال ایمیل</small>
+									</li>
+									<li class="d-flex flex-row">
+										<i class="mdi mdi-check-bold justify-content-start align-items-center mx-2 text-theme"></i>
+										<small class="d-block">پشتیبانی</small>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="col-12 col-md-4 p-2">
+						<div class="card popular-plan h-100 py-5 px-4">
+							<span class="popular d-block rounded-3 fw-bold py-1 px-2">محبوب</span>
+							<div class="header d-flex flex-row justify-content-start align-items-center">
+								<i class="mdi mdi-robot-outline mdi-24px mx-3"></i>
+								<h5 class="font-iransans-medium my-0">استاندارد</h5>
+							</div>
+							<div class="body pt-3">
+								<span class="d-block small text-muted mb-3">بهترین برای همه کاربران</span>
+								<div class="d-flex flex-row justify-content-center align-items-center">
+									<h1 class="my-0 font-pinar">99,000</h1>
+									<small class="d-block small text-muted">تومان / ماهانه</small>
+								</div>
+
+								<a class="btn btn-primary w-100 my-4" href="#"> خرید </a>
+
+								<strong class="d-block small text-muted mb-3">تمامی امکانات بسته رایگان، به اضافه</strong>
+								<ul class="list-unstyled text-muted px-0 mb-0">
+									<li class="d-flex flex-row mb-2">
+										<i class="mdi mdi-check-bold justify-content-start align-items-center mx-2 text-theme"></i>
+										<small class="d-block">فضا 20 گیگابایت</small>
+									</li>
+									<li class="d-flex flex-row mb-2">
+										<i class="mdi mdi-check-bold justify-content-start align-items-center mx-2 text-theme"></i>
+										<small class="d-block">ارسال پیام کوتاه</small>
+									</li>
+									<li class="d-flex flex-row mb-2">
+										<i class="mdi mdi-check-bold justify-content-start align-items-center mx-2 text-theme"></i>
+										<small class="d-block">ارسال پیام و ایمیل زمان بندی شده</small>
+									</li>
+									<li class="d-flex flex-row">
+										<i class="mdi mdi-check-bold justify-content-start align-items-center mx-2 text-theme"></i>
+										<small class="d-block"> درگاه پرداخت ارزی</small>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="col-12 col-md-4 p-2">
+						<div class="card h-100 py-5 px-4">
+							<div class="header d-flex flex-row justify-content-start align-items-center">
+								<i class="mdi mdi-flash-outline mdi-24px mx-3"></i>
+								<h5 class="font-iransans-medium my-0">حرفه ای</h5>
+							</div>
+							<div class="body pt-3">
+								<span class="d-block small text-muted mb-3">مناسب برای توسعه دهندگان</span>
+								<div class="d-flex flex-row justify-content-center align-items-center">
+									<h1 class="my-0 font-pinar">199,000</h1>
+									<small class="d-block small text-muted">تومان / ماهانه</small>
+								</div>
+
+								<a class="btn btn-primary w-100 my-4" href="#"> خرید </a>
+
+								<strong class="d-block small text-muted mb-3">تمامی امکانات بسته استاندارد، به اضافه</strong>
+								<ul class="list-unstyled text-muted px-0 mb-0">
+									<li class="d-flex flex-row mb-2">
+										<i class="mdi mdi-check-bold justify-content-start align-items-center mx-2 text-theme"></i>
+										<small class="d-block">فضا 100 گیگابایت</small>
+									</li>
+									<li class="d-flex flex-row mb-2">
+										<i class="mdi mdi-check-bold justify-content-start align-items-center mx-2 text-theme"></i>
+										<small class="d-block">دسترسی API برای تمام امکانات</small>
+									</li>
+									<li class="d-flex flex-row mb-2">
+										<i class="mdi mdi-check-bold justify-content-start align-items-center mx-2 text-theme"></i>
+										<small class="d-block">گزارش لحظه ای وضعیت</small>
+									</li>
+									<li class="d-flex flex-row">
+										<i class="mdi mdi-check-bold justify-content-start align-items-center mx-2 text-theme"></i>
+										<small class="d-block">پشتیبان گیری از داده ها روزانه</small>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="faq" class="faq position-relative pt-5">
+			<div class="container d-block py-5" data-aos="fade-down-left">
+				<h3 class="line font-iransans-black"> پرسش‌های متداول </h3>
+
+				<div class="d-block pt-5" id="accordionFaq" data-aos="zoom-in">
+					<ul class="list-unstyled px-0 mb-0">
+						<li class="py-2 px-3 mb-4">
+							<a class="link d-flex flex-row justify-content-between align-items-center" href="#" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+								چگونه میتوانم ثبت سفارش کنم
+								<i class="mdi mdi-chevron-down mdi-24px text-muted"></i>
+							</a>
+							<p id="collapse1" class="accordion-collapse collapse lh-lg mt-3" data-bs-parent="#accordionFaq">
+								لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با
+								هدف بهبود ابزارهای کاربردی می باشد
+							</p>
+						</li>
+						<li class="py-2 px-3 mb-4">
+							<a class="link d-flex flex-row justify-content-between align-items-center" href="#" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+								چه محصولاتی شامل ضمانت می شوند
+								<i class="mdi mdi-chevron-down mdi-24px text-muted"></i>
+							</a>
+							<p id="collapse2" class="accordion-collapse collapse lh-lg mt-3" data-bs-parent="#accordionFaq">
+								لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با
+								هدف بهبود ابزارهای کاربردی می باشد
+							</p></li
+						>
+						<li class="py-2 px-3 mb-4">
+							<a class="link d-flex flex-row justify-content-between align-items-center" href="#" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+								از چه روشهایی میتوانم سفارش خود را پرداخت کنم
+								<i class="mdi mdi-chevron-down mdi-24px text-muted"></i>
+							</a>
+							<p id="collapse3" class="accordion-collapse collapse lh-lg mt-3" data-bs-parent="#accordionFaq">
+								لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با
+								هدف بهبود ابزارهای کاربردی می باشد
+							</p></li
+						>
+						<li class="py-2 px-3 mb-4">
+							<a class="link d-flex flex-row justify-content-between align-items-center" href="#" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+								چطور میتوانم کد تخفیف دریافت کنم
+								<i class="mdi mdi-chevron-down mdi-24px text-muted"></i>
+							</a>
+							<p id="collapse4" class="accordion-collapse collapse lh-lg mt-3" data-bs-parent="#accordionFaq">
+								لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با
+								هدف بهبود ابزارهای کاربردی می باشد
+							</p></li
+						>
+						<li class="py-2 px-3 mb-4">
+							<a class="link d-flex flex-row justify-content-between align-items-center" href="#" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+								چطور میتوانم از کارت هدیه استفاده کنم
+								<i class="mdi mdi-chevron-down mdi-24px text-muted"></i>
+							</a>
+							<p id="collapse5" class="accordion-collapse collapse lh-lg mt-3" data-bs-parent="#accordionFaq">
+								لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با
+								هدف بهبود ابزارهای کاربردی می باشد لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی
+								تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد
+							</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<section id="contactus" class="contact-us position-relative overflow-hidden py-5">
+			<div class="container d-block mb-4" data-aos="fade-down-left">
+				<h3 class="line font-iransans-black"> تماس با ما </h3>
+
+				<div class="box d-flex flex-column-reverse flex-md-row flex-wrap mt-5" data-aos="fade-left">
+					<div class="col-12 col-md-6 text-center mt-5 mt-md-0">
+						<img class="img" src="./assets/images/contactus.png" />
+					</div>
+					<form class="col-12 col-md-6 p-3">
+						<div class="form-floating mb-3">
+							<input type="text" class="form-control" id="fullname" name="fullname" maxlength="50" placeholder="نام را وارد کنید" />
+							<label for="fullname">نام</label>
+						</div>
+						<div class="form-floating mb-3">
+							<input type="email" class="form-control text-end" id="email" name="email" maxlength="100" placeholder="ایمیل را وارد کنید" />
+							<label for="email">ایمیل</label>
+						</div>
+						<div class="form-floating mb-3">
+							<textarea class="form-control" id="comment" name="comment" rows="5" maxlength="200" placeholder="پیام را وارد کنید" style="height: 80px"></textarea>
+							<label for="comment">پیام</label>
+						</div>
+
+						<a class="btn btn-primary">ارسال<i class="mdi mdi-send mdi-rotate-225 ms-2"></i></a>
+					</form>
+				</div>
+			</div>
+
+			<a id="scrollToTop" class="link scroll-to-top" href="#"><i class="mdi mdi-arrow-up mdi-24px"></i></a>
+		</section>
+
+		<footer class="footer">
+			<div class="container d-flex flex-row flex-wrap p-3">
+				<div class="d-flex flex-column justify-content-start align-items-start col-xl-3 col-lg-4 col-md-6 col-12 mb-3 mb-xl-0">
+					<h1 class="app-title font-pinar h4 mb-3"> قالب رامَن </h1>
+					<p class="text-muted lh-lg">قالب رامَن یک قالب تک صفحه ای است که با آخرین نسخه بوت استرپ طراحی شده است.</p>
+
+					<div class="enamad d-flex flex-row justify-content-start align-items-start col-12 col-md-4">
+						<a href="#" class="enamad-item p-2"><img src="assets/images/samandehi.png" /></a>
+						<a href="#" class="enamad-item p-2 mx-1"><img src="assets/images/kasbokar.png" /></a>
+						<a href="#" class="enamad-item p-2"><img src="assets/images/enamad.png" /></a>
+					</div>
+				</div>
+
+				<div class="d-flex flex-column justify-content-start align-items-start col-xl-3 col-lg-4 col-md-6 col-12 mb-3 mb-lg-0">
+					<span class="theme-secondary-color d-block mb-3">تماس با ما</span>
+
+					<small class="d-block text-muted mb-2">
+						<i class="mdi mdi-map-marker"></i>
+						آدرس
+					</small>
+					<a class="d-block small lh-lg mb-2" href="https://www.google.com/maps/@35.7652712,51.4276345,17.25z" target="_blank" rel="noopener">تهران ، میدان آزادی ، خیابان 14 شرقی ، پلاک 20 ، واحد 1</a>
+					<small class="d-block text-muted mb-2">
+						<i class="mdi mdi-phone"></i>
+						تلفن
+					</small>
+					<a class="d-block small ls-1 mb-2" href="tel:+982111223344">021-11223344</a>
+					<small class="d-block text-muted mb-2">
+						<i class="mdi mdi-at"></i>
+						ایمیل
+					</small>
+					<a class="d-block small ls-1" href="mailto:info@raman.ir">info@raman.ir</a>
+				</div>
+
+				<div class="d-flex flex-column justify-content-start align-items-start col-12 col-md-3 mb-3 mb-md-0">
+					<span class="theme-secondary-color d-block mb-3">پیوندها</span>
+					<ul class="list-unstyled px-0 mb-0">
+						<li class="mb-2">
+							<a href="#products" class="d-flex flex-row align-items-center"><i class="mdi mdi-chevron-left"></i><span class="d-inline-block small">محصولات</span></a>
+						</li>
+						<li class="mb-2">
+							<a href="#faq" class="d-flex flex-row align-items-center"><i class="mdi mdi-chevron-left"></i><span class="d-inline-block small">پرسش‌های متداول</span></a>
+						</li>
+						<li class="mb-2">
+							<a href="#news" class="d-flex flex-row align-items-center"><i class="mdi mdi-chevron-left"></i><span class="d-inline-block small">آخرین مقالات</span></a>
+						</li>
+						<li>
+							<a href="#aboutus" class="d-flex flex-row align-items-center"><i class="mdi mdi-chevron-left"></i><span class="d-inline-block small">درباره ما</span></a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="d-flex flex-column justify-content-start align-items-start col-xl-3 col-lg-4 col-md-6 col-12">
+					<span class="theme-secondary-color d-block mb-3">خبرنامه</span>
+					<p class="text-muted small lh-lg">برای عضویت در خبرنامه ثبت نام کنید</p>
+					<div class="newsletters position-relative d-flex flex-row">
+						<input type="email" name="email" class="email text-start" placeholder="ایمیل خود را وارد کنید" />
+						<button type="button" class="btn d-flex flex-row justify-content-center align-items-center"><i class="mdi mdi-email"></i></button>
+					</div>
+				</div>
+			</div>
+
+			<div class="copyrights p-2">
+				<div class="container d-flex flex-row flex-wrap justify-content-center justify-content-md-between">
+					<small class="d-block text-center text-muted mb-3 mb-md-0">
+						<i class="mdi mdi-copyright"></i>
+						2022 <a class="link link-theme mx-1" href="/">رامَن</a>، تمامی حقوق محفوظ می باشد
+					</small>
+
+					<div class="d-flex flex-row">
+						<a href="#" class="instagram px-2"><i class="mdi mdi-instagram mdi-18px"></i></a>
+						<a href="#" class="whatsapp px-2"><i class="mdi mdi-whatsapp mdi-18px"></i></a>
+						<a href="#" class="linkedin px-2"><i class="mdi mdi-linkedin mdi-18px"></i></a>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<script type="text/javascript" src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+		<script type="text/javascript" src="assets/css/bootstrap-5.2.0/js/bootstrap.bundle.min.js"></script>
+
+		<script type="text/javascript" src="assets/js/main.js"></script>
+		<script type="text/javascript" src="assets/js/index.js"></script>
+	</body>
+</html>
