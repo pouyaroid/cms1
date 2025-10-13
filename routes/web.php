@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\NewsletterController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PlanController;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
@@ -26,3 +27,10 @@ Route::post('/newsletter/subscribe', [NewsletterController::class, 'store'])->na
 Route::prefix('admin')->group(function () {
     Route::resource('newsletters',NewsletterController::class)->only(['index', 'destroy']);
 });
+
+
+//plans
+
+Route::get('/pricing', [PlanController::class, 'index'])->name('plans.index');
+Route::get('/pricing/create', [PlanController::class, 'create'])->name('plans.create');
+Route::post('/pricing', [PlanController::class, 'store'])->name('plans.store');
