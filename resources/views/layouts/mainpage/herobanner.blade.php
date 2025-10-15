@@ -9,11 +9,11 @@
             $primary_btn_link = $hero->primary_button_link ?? 'login.html';
             $secondary_btn_text = $hero->secondary_button_text ?? 'مشاوره بگیرید';
             $secondary_btn_link = $hero->secondary_button_link ?? '#';
-            $main_image = $hero->main_image ? asset('storage/'.$hero->main_image) : asset('assets/images/woman1.png');
-            $shape_image = $hero->shape_image ? asset('storage/'.$hero->shape_image) : asset('assets/images/shape5.png');
+            $main_image = $hero && $hero->main_image ? asset('storage/'.$hero->main_image) : asset('assets/images/woman1.png');
+            $shape_image = $hero && $hero->shape_image ? asset('storage/'.$hero->shape_image) : asset('assets/images/shape5.png');
         @endphp
 
-        {{-- ✅ متن سمت چپ --}}
+        {{-- متن سمت چپ --}}
         <div class="d-block col-12 col-md-4 pt-5 mb-lg-0" data-aos="fade-left">
             <span class="d-block">{{ $subtitle }}</span>
             <h1 class="font-pinar h2 lh-lg mb-4">{{ $title }}</h1>
@@ -37,7 +37,7 @@
             </a>
         </div>
 
-        {{-- ✅ تصویر سمت راست --}}
+        {{-- تصویر سمت راست --}}
         <div class="image-container d-flex flex-row justify-content-end col-12 col-md-8">
             <div class="box">
                 <div class="overflow-hidden">
@@ -46,10 +46,9 @@
             </div>
         </div>
 
-        {{-- ✅ تصویر پس‌زمینه --}}
+        {{-- تصویر پس‌زمینه --}}
         <div class="shape-bg">
             <img src="{{ $shape_image }}" alt="Shape background" />
         </div>
     </div>
 </section>
-

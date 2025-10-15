@@ -11,7 +11,7 @@ class HeroBannerController extends Controller
     public function index()
     {
         $hero = HeroBanner::first();
-        return view('frontend.hero', compact('hero'));
+        return view('layouts.mainpage.herobanner', compact('hero'));
     }
 
    
