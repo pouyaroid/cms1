@@ -7,6 +7,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OpinionController;
 use App\Http\Controllers\PlanController;
 use App\Http\Controllers\PortfolioController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\WhyUsController;
 use Illuminate\Support\Facades\Route;
@@ -27,12 +28,12 @@ Route::prefix('admin')->group(function () {
 });
 
 // مسیر سمت کاربر
-Route::post('/newsletter/subscribe', [NewsletterController::class, 'store'])->name('newsletter.subscribe');
+// Route::post('/newsletter/subscribe', [NewsletterController::class, 'store'])->name('newsletter.subscribe');
 
-// مسیر سمت ادمین
-Route::prefix('admin')->group(function () {
-    Route::resource('newsletters',NewsletterController::class)->only(['index', 'destroy']);
-});
+// // مسیر سمت ادمین
+// Route::prefix('admin')->group(function () {
+//     Route::resource('newsletters',NewsletterController::class)->only(['index', 'destroy']);
+// });
 
 
 //plans
@@ -53,4 +54,5 @@ Route::prefix('admin')->group(function () {
     Route::get('/opinions', [OpinionController::class, 'index'])->name('opinions.index');
 Route::post('/opinions', [OpinionController::class, 'store'])->name('opinions.store');
 Route::get('/whyus', [WhyUsController::class, 'index'])->name('whyus.index');
+Route::resource('posts', PostController::class);
 });
