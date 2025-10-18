@@ -8,6 +8,7 @@ use App\Models\Opinion;
 use App\Models\Plan;
 use App\Models\PortfolioItem;
 use App\Models\Product;
+use App\Models\TeamMember;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -19,7 +20,8 @@ class HomeController extends Controller
         $products=Product::all();
         $portfolios=PortfolioItem::all();
         $opinions = Opinion::latest()->take(6)->get();
+        $teamMembers = TeamMember::latest()->get();
 
-        return view('index',compact('customers','plans','hero','products','portfolios','opinions'));
+        return view('index',compact('customers','plans','hero','products','portfolios','opinions','teamMembers'));
     }
 }
