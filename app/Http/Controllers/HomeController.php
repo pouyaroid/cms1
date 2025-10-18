@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Customer;
+use App\Models\Faq;
 use App\Models\HeroBanner;
 use App\Models\Opinion;
 use App\Models\Plan;
 use App\Models\PortfolioItem;
 use App\Models\Product;
 use App\Models\TeamMember;
+use App\Models\WhyUs;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -21,7 +23,10 @@ class HomeController extends Controller
         $portfolios=PortfolioItem::all();
         $opinions = Opinion::latest()->take(6)->get();
         $teamMembers = TeamMember::latest()->get();
+        $whyus = WhyUs::all();
+        $faqs =Faq::all();
+        
 
-        return view('index',compact('customers','plans','hero','products','portfolios','opinions','teamMembers'));
+        return view('index',compact('customers','plans','hero','products','portfolios','opinions','teamMembers','whyus','faqs'));
     }
 }

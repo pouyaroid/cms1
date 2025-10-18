@@ -8,6 +8,7 @@ use App\Http\Controllers\OpinionController;
 use App\Http\Controllers\PlanController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\WhyUsController;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
@@ -51,4 +52,5 @@ Route::prefix('admin')->group(function () {
     Route::resource('portfolio', PortfolioController::class);
     Route::get('/opinions', [OpinionController::class, 'index'])->name('opinions.index');
 Route::post('/opinions', [OpinionController::class, 'store'])->name('opinions.store');
+Route::get('/whyus', [WhyUsController::class, 'index'])->name('whyus.index');
 });

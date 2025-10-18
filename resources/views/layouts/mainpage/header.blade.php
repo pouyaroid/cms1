@@ -69,7 +69,7 @@
         </li>
     </ul>
 
-    <a class="lang link ms-2" onclick="changeLang(this)" data-lang="en-US"> EN </a>
+    {{-- <a class="lang link ms-2" onclick="changeLang(this)" data-lang="en-US"> EN </a> --}}
 </div>
 </div>
 </nav>
