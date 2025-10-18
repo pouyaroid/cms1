@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\NewsletterController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HeroBannerController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\OpinionController;
 use App\Http\Controllers\PlanController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\ProductController;
@@ -48,4 +49,6 @@ Route::prefix('admin')->group(function () {
     Route::put('/products/{product}', [ProductController::class, 'update'])->name('products.update');
     Route::delete('/products/{product}', [ProductController::class, 'destroy'])->name('products.destroy');
     Route::resource('portfolio', PortfolioController::class);
+    Route::get('/opinions', [OpinionController::class, 'index'])->name('opinions.index');
+Route::post('/opinions', [OpinionController::class, 'store'])->name('opinions.store');
 });
