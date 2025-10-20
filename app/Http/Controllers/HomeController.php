@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\About;
+use App\Models\ContactNumber;
 use App\Models\Customer;
 use App\Models\Faq;
 use App\Models\HeroBanner;
@@ -28,8 +29,21 @@ class HomeController extends Controller
         $whyus = WhyUs::all();
         $faqs =Faq::all();
         $about = About::first();
-        $settings = SiteSetting::firstOrNew([]);        
+        $settings = SiteSetting::firstOrNew([]); 
+        $contacts = ContactNumber::first();       
 
-        return view('index',compact('customers','plans','hero','products','portfolios','opinions','teamMembers','whyus','faqs','about','settings'));
+        return view('index',compact('customers',
+        'plans',
+        'hero',
+        'products',
+        'portfolios',
+        'opinions',
+        'teamMembers',
+        'whyus',
+        'faqs',
+        'about',
+        'settings',
+        'contacts'
+    ));
     }
 }

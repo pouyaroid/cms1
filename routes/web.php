@@ -3,6 +3,7 @@
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\Admin\NewsletterController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ContactNumberController;
 use App\Http\Controllers\HeroBannerController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OpinionController;
@@ -61,3 +62,5 @@ Route::resource('about', AboutController::class);
 });
 Route::get('/admin/settings', [SiteSettingController::class, 'index'])->name('settings.index');
 Route::post('/admin/settings', [SiteSettingController::class, 'update'])->name('settings.update');
+Route::get('/contact', [ContactNumberController::class, 'index']);
+Route::post('/contact', [ContactNumberController::class, 'updateOrCreate']);
