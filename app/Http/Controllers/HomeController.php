@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\About;
 use App\Models\Customer;
 use App\Models\Faq;
 use App\Models\HeroBanner;
@@ -25,8 +26,9 @@ class HomeController extends Controller
         $teamMembers = TeamMember::latest()->get();
         $whyus = WhyUs::all();
         $faqs =Faq::all();
+        $about = About::first();
         
 
-        return view('index',compact('customers','plans','hero','products','portfolios','opinions','teamMembers','whyus','faqs'));
+        return view('index',compact('customers','plans','hero','products','portfolios','opinions','teamMembers','whyus','faqs','about'));
     }
 }

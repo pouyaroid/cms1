@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\Admin\NewsletterController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HeroBannerController;
@@ -55,4 +56,5 @@ Route::prefix('admin')->group(function () {
 Route::post('/opinions', [OpinionController::class, 'store'])->name('opinions.store');
 Route::get('/whyus', [WhyUsController::class, 'index'])->name('whyus.index');
 Route::resource('posts', PostController::class);
+Route::resource('about', AboutController::class);
 });

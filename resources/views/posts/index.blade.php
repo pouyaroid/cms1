@@ -1,6 +1,3 @@
-@extends('layouts.app')
-
-@section('content')
 <div class="container">
     <h2>لیست پست‌ها</h2>
     <a href="{{ route('posts.create') }}" class="btn btn-success mb-3">ایجاد پست جدید</a>
@@ -37,4 +34,4 @@
 
     {{ $posts->links() }}
 </div>
-@endsection
+
