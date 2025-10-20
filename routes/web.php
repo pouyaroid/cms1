@@ -10,6 +10,7 @@ use App\Http\Controllers\PlanController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\SiteSettingController;
 use App\Http\Controllers\WhyUsController;
 use Illuminate\Support\Facades\Route;
 
@@ -58,3 +59,5 @@ Route::get('/whyus', [WhyUsController::class, 'index'])->name('whyus.index');
 Route::resource('posts', PostController::class);
 Route::resource('about', AboutController::class);
 });
+Route::get('/admin/settings', [SiteSettingController::class, 'index'])->name('settings.index');
+Route::post('/admin/settings', [SiteSettingController::class, 'update'])->name('settings.update');

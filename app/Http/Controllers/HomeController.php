@@ -10,6 +10,7 @@ use App\Models\Opinion;
 use App\Models\Plan;
 use App\Models\PortfolioItem;
 use App\Models\Product;
+use App\Models\SiteSetting;
 use App\Models\TeamMember;
 use App\Models\WhyUs;
 use Illuminate\Http\Request;
@@ -27,8 +28,8 @@ class HomeController extends Controller
         $whyus = WhyUs::all();
         $faqs =Faq::all();
         $about = About::first();
-        
+        $settings = SiteSetting::firstOrNew([]);        
 
-        return view('index',compact('customers','plans','hero','products','portfolios','opinions','teamMembers','whyus','faqs','about'));
+        return view('index',compact('customers','plans','hero','products','portfolios','opinions','teamMembers','whyus','faqs','about','settings'));
     }
 }
