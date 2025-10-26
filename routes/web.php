@@ -6,6 +6,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ContactNumberController;
 use App\Http\Controllers\HeroBannerController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MenuController;
 use App\Http\Controllers\OpinionController;
 use App\Http\Controllers\PlanController;
 use App\Http\Controllers\PortfolioController;
@@ -64,3 +65,12 @@ Route::get('/admin/settings', [SiteSettingController::class, 'index'])->name('se
 Route::post('/admin/settings', [SiteSettingController::class, 'update'])->name('settings.update');
 Route::get('/contact', [ContactNumberController::class, 'index']);
 Route::post('/contact', [ContactNumberController::class, 'updateOrCreate']);
+
+Route::prefix('menus')->name('menus.')->group(function () {
+    Route::get('/', [MenuController::class, 'index'])->name('index');
+    Route::get('/create', [MenuController::class, 'create'])->name('create');
+    Route::post('/store', [MenuController::class, 'store'])->name('store');
+    Route::get('/{menu}/edit', [MenuController::class, 'edit'])->name('edit');
+    Route::put('/{menu}', [MenuController::class, 'update'])->name('update');
+    Route::delete('/{menu}', [MenuController::class, 'destroy'])->name('destroy');
+});

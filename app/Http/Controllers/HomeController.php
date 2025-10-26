@@ -7,6 +7,7 @@ use App\Models\ContactNumber;
 use App\Models\Customer;
 use App\Models\Faq;
 use App\Models\HeroBanner;
+use App\Models\Menu;
 use App\Models\Opinion;
 use App\Models\Plan;
 use App\Models\PortfolioItem;
@@ -30,7 +31,8 @@ class HomeController extends Controller
         $faqs =Faq::all();
         $about = About::first();
         $settings = SiteSetting::firstOrNew([]); 
-        $contacts = ContactNumber::first();       
+        $contacts = ContactNumber::first(); 
+        $menus = Menu::whereNull('parent_id')->orderBy('order')->with('children')->get();      
 
         return view('index',compact('customers',
         'plans',
@@ -43,7 +45,8 @@ class HomeController extends Controller
         'faqs',
         'about',
         'settings',
-        'contacts'
+        'contacts',
+        'menus'
     ));
     }
 }
