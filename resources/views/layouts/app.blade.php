@@ -51,17 +51,14 @@
 
 <body class="theme-middle-blue">
 
-    {{-- ✅ Preloader --}}
-    @include('layouts._partials.preloader')
-
     {{-- ✅ Navbar --}}
-    @include('layouts._partials.navbar')
+    {{-- @include('layouts._partials.navbar') --}}
 
     {{-- ✅ Page Content --}}
     @yield('content')
 
     {{-- ✅ Footer --}}
-    @include('layouts._partials.footer')
+    {{-- @include('layouts._partials.footer') --}}
 
     {{-- 📦 Scripts --}}
     <script type="text/javascript" src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
