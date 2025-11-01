@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\Admin\NewsletterController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ContactNumberController;
 use App\Http\Controllers\HeroBannerController;
@@ -74,3 +75,4 @@ Route::prefix('menus')->name('menus.')->group(function () {
     Route::put('/{menu}', [MenuController::class, 'update'])->name('update');
     Route::delete('/{menu}', [MenuController::class, 'destroy'])->name('destroy');
 });
+Route::resource('categories', CategoryController::class);

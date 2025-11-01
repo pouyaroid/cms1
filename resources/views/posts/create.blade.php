@@ -50,6 +50,8 @@
 
             {{-- ✅ سایدبار تنظیمات پست --}}
             <div class="col-lg-3">
+
+                {{-- انتشار --}}
                 <div class="card border-0 shadow-sm mb-4">
                     <div class="card-header bg-white fw-bold">انتشار</div>
                     <div class="card-body">
@@ -62,6 +64,7 @@
                     </div>
                 </div>
 
+                {{-- تصویر شاخص --}}
                 <div class="card border-0 shadow-sm mb-4">
                     <div class="card-header bg-white fw-bold">تصویر شاخص</div>
                     <div class="card-body text-center">
@@ -70,17 +73,34 @@
                     </div>
                 </div>
 
+                {{-- ✅ دسته‌بندی‌ها (چندتایی) --}}
                 <div class="card border-0 shadow-sm mb-4">
-                    <div class="card-header bg-white fw-bold">دسته‌بندی</div>
+                    <div class="card-header bg-white fw-bold">دسته‌بندی‌ها</div>
                     <div class="card-body">
-                        <select name="category_id" class="form-select">
-                            <option value="">انتخاب دسته...</option>
-                            <option>اخبار</option>
-                            <option>آموزشی</option>
-                            <option>تحلیلی</option>
-                        </select>
+                        @if($categories->count() > 0)
+                            <div class="d-flex flex-column gap-2">
+                                @foreach($categories as $category)
+                                    <div class="form-check">
+                                        <input 
+                                            type="checkbox" 
+                                            name="categories[]" 
+                                            value="{{ $category->id }}" 
+                                            id="cat_{{ $category->id }}"
+                                            class="form-check-input"
+                                            {{ in_array($category->id, old('categories', [])) ? 'checked' : '' }}>
+                                        <label class="form-check-label" for="cat_{{ $category->id }}">
+                                            {{ $category->name }}
+                                        </label>
+                                    </div>
+                                @endforeach
+                            </div>
+                        @else
+                            <p class="text-muted small mb-0">هیچ دسته‌ای وجود ندارد.</p>
+                            <a href="{{ route('categories.create') }}" class="small text-primary">افزودن دسته جدید</a>
+                        @endif
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
@@ -97,14 +117,12 @@ ClassicEditor
         ],
     })
     .then(editor => {
-        // ✅ تنظیم ارتفاع ثابت حتی بعد از فوکوس
         const editable = editor.ui.view.editable.element;
         editable.style.minHeight = '550px';
         editable.style.maxHeight = '800px';
         editable.style.padding = '1rem';
         editable.style.overflowY = 'auto';
 
-        // جلوگیری از تغییر ارتفاع موقع کلیک یا تایپ
         const observer = new ResizeObserver(() => {
             editable.style.height = 'auto';
             editable.style.minHeight = '550px';
