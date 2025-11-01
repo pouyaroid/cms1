@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'افزودن نوشته جدید')
+@section('title', isset($post) ? 'ویرایش نوشته' : 'افزودن نوشته جدید')
 
 @section('content')
 <div class="container-fluid bg-light py-5">
@@ -10,8 +10,15 @@
             {{-- ✅ بخش اصلی ادیتور --}}
             <div class="col-lg-9">
 
-                <form id="postForm" action="{{ route('posts.store') }}" method="POST" enctype="multipart/form-data">
+                <form id="postForm" 
+                      action="{{ isset($post) ? route('posts.update', $post->id) : route('posts.store') }}" 
+                      method="POST" 
+                      enctype="multipart/form-data">
+
                     @csrf
+                    @if(isset($post))
+                        @method('PUT')
+                    @endif
 
                     {{-- خطاها --}}
                     @if ($errors->any())
@@ -31,18 +38,28 @@
                                class="form-control form-control-lg border-0 border-bottom fw-bold" 
                                style="font-size: 1.6rem;"
                                placeholder="عنوان را اینجا وارد کنید..." 
-                               value="{{ old('title') }}" required>
+                               value="{{ old('title', $post->title ?? '') }}" required>
+                    </div>
+
+                    {{-- لینک پست --}}
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold">لینک پست (اختیاری)</label>
+                        <input type="text" name="link"
+                               class="form-control"
+                               placeholder="مثلاً: https://example.com/post-link"
+                               value="{{ old('link', $post->link ?? '') }}">
+                        <small class="text-muted">در صورت خالی گذاشتن، به‌صورت خودکار تولید می‌شود.</small>
                     </div>
 
                     {{-- ادیتور محتوا --}}
                     <div class="mb-4">
-                        <textarea id="editor" name="content">{{ old('content') }}</textarea>
+                        <textarea id="editor" name="content">{{ old('content', $post->content ?? '') }}</textarea>
                     </div>
 
                     {{-- فقط برای موبایل --}}
                     <div class="d-lg-none mb-5">
                         <button type="submit" class="btn btn-success w-100 py-2 fw-semibold">
-                            <i class="bi bi-upload"></i> انتشار نوشته
+                            <i class="bi bi-upload"></i> {{ isset($post) ? 'به‌روزرسانی نوشته' : 'انتشار نوشته' }}
                         </button>
                     </div>
                 </form>
@@ -56,8 +73,15 @@
                     <div class="card-header bg-white fw-bold">انتشار</div>
                     <div class="card-body">
                         <button type="submit" form="postForm" class="btn btn-success w-100 mb-2">
-                            <i class="bi bi-upload"></i> انتشار
+                            <i class="bi bi-upload"></i> {{ isset($post) ? 'به‌روزرسانی' : 'انتشار' }}
                         </button>
+
+                        @if(isset($post))
+                            <a href="{{ $post->link }}" target="_blank" class="btn btn-outline-primary w-100 mb-2">
+                                <i class="bi bi-link-45deg"></i> مشاهده لینک پست
+                            </a>
+                        @endif
+
                         <button type="button" class="btn btn-outline-secondary w-100">
                             <i class="bi bi-eye"></i> پیش‌نمایش
                         </button>
@@ -69,6 +93,11 @@
                     <div class="card-header bg-white fw-bold">تصویر شاخص</div>
                     <div class="card-body text-center">
                         <input type="file" name="image" class="form-control mb-3">
+                        @if(isset($post) && $post->image)
+                            <img src="{{ asset('storage/'.$post->image) }}" 
+                                 class="img-fluid rounded mt-2 mb-2" 
+                                 alt="تصویر شاخص">
+                        @endif
                         <small class="text-muted">فرمت مجاز: JPG, PNG, WEBP</small>
                     </div>
                 </div>
@@ -87,7 +116,7 @@
                                             value="{{ $category->id }}" 
                                             id="cat_{{ $category->id }}"
                                             class="form-check-input"
-                                            {{ in_array($category->id, old('categories', [])) ? 'checked' : '' }}>
+                                            {{ in_array($category->id, old('categories', isset($post) ? $post->categories->pluck('id')->toArray() : [])) ? 'checked' : '' }}>
                                         <label class="form-check-label" for="cat_{{ $category->id }}">
                                             {{ $category->name }}
                                         </label>
@@ -122,12 +151,6 @@ ClassicEditor
         editable.style.maxHeight = '800px';
         editable.style.padding = '1rem';
         editable.style.overflowY = 'auto';
-
-        const observer = new ResizeObserver(() => {
-            editable.style.height = 'auto';
-            editable.style.minHeight = '550px';
-        });
-        observer.observe(editable);
     })
     .catch(error => console.error(error));
 </script>
