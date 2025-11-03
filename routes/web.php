@@ -16,6 +16,8 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SiteSettingController;
 use App\Http\Controllers\WhyUsController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BuilderController;
+
 
 // Route::get('/', function () {
 //     return view('index');
@@ -76,3 +78,5 @@ Route::prefix('menus')->name('menus.')->group(function () {
     Route::delete('/{menu}', [MenuController::class, 'destroy'])->name('destroy');
 });
 Route::resource('categories', CategoryController::class);
+Route::get('/builder', [BuilderController::class, 'index'])->name('builder.index');
+Route::post('/builder/save', [BuilderController::class, 'save'])->name('builder.save');
