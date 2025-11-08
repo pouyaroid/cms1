@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\NewsletterController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ContactController;
@@ -80,3 +81,4 @@ Route::prefix('menus')->name('menus.')->group(function () {
 Route::resource('categories', CategoryController::class);
 Route::get('/builder', [BuilderController::class, 'index'])->name('builder.index');
 Route::post('/builder/save', [BuilderController::class, 'save'])->name('builder.save');
+Route::get('/admin',[AdminController::class,'index']);
