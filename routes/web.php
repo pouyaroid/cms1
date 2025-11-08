@@ -53,7 +53,13 @@ Route::get('/contact-us', [ContactController::class, 'index'])->name('contact.in
 Route::post('/contact-us', [ContactController::class, 'store'])->name('contact.store');
 Route::prefix('admin')->group(function () {
     Route::get('/hero', [HeroBannerController::class, 'adminIndex'])->name('admin.hero.index');
-    Route::post('/hero/update/{id}', [HeroBannerController::class, 'update'])->name('admin.hero.update');
+    Route::get('/hero/create', [HeroBannerController::class, 'create'])->name('admin.hero.create');
+    Route::post('/hero/store', [HeroBannerController::class, 'store'])->name('admin.hero.store');
+    Route::get('/hero/{id}/edit', [HeroBannerController::class, 'edit'])->name('admin.hero.edit');
+    Route::post('/hero/{id}/update', [HeroBannerController::class, 'update'])->name('admin.hero.update');
+    Route::delete('/hero/{id}', [HeroBannerController::class, 'destroy'])->name('admin.hero.destroy');
+
+
     Route::get('/products', [ProductController::class, 'index'])->name('products.index');
     Route::post('/products', [ProductController::class, 'store'])->name('products.store');
     Route::put('/products/{product}', [ProductController::class, 'update'])->name('products.update');
@@ -82,3 +88,17 @@ Route::resource('categories', CategoryController::class);
 Route::get('/builder', [BuilderController::class, 'index'])->name('builder.index');
 Route::post('/builder/save', [BuilderController::class, 'save'])->name('builder.save');
 Route::get('/admin',[AdminController::class,'index']);
+Route::get('/about', [AboutController::class, 'index'])->name('about.index');
+Route::get('/about/create', [AboutController::class, 'create'])->name('about.create');
+Route::post('/about', [AboutController::class, 'store'])->name('about.store');
+Route::get('/about/{about}/edit', [AboutController::class, 'edit'])->name('about.edit');
+Route::put('/about/{about}', [AboutController::class, 'update'])->name('about.update');
+Route::delete('/about/{about}', [AboutController::class, 'destroy'])->name('about.destroy');
+Route::prefix('admin')->group(function () {
+    Route::get('/contact', [ContactNumberController::class, 'index'])->name('contact.index');
+    Route::post('/contact', [ContactNumberController::class, 'updateOrCreate'])->name('contact.updateOrCreate');
+});
+
+Route::prefix('admin')->name('admin.')->group(function () {
+    Route::resource('contacts', ContactNumberController::class);
+});

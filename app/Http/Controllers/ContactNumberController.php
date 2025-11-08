@@ -38,5 +38,9 @@ class ContactNumberController extends Controller
 
         return redirect()->back()->with('success', 'Contact saved or updated successfully.');
     }
+    public function create()
+    {
+        return view('admin.contact.create');
+    }
 
 }

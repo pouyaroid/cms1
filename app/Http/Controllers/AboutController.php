@@ -11,12 +11,12 @@ class AboutController extends Controller
     public function index()
     {
         $about = About::first();
-        return view('about.index', compact('about'));
+        return view('layouts.mainpage.about', compact('about'));
     }
 
     public function create()
     {
-        return view('about.create');
+        return view('admin.about.create');
     }
 
     public function store(Request $request)
