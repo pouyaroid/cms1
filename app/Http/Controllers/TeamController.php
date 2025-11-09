@@ -74,4 +74,11 @@ class TeamController extends Controller
 
         return redirect()->back()->with('success', 'عضو تیم با موفقیت حذف شد.');
     }
+    public function create()
+{
+    
+    $teamMembers = TeamMember::latest()->get();
+    return view('admin.team.create', compact('teamMembers'));
+}
+
 }

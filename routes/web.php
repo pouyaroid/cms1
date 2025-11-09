@@ -18,7 +18,7 @@ use App\Http\Controllers\SiteSettingController;
 use App\Http\Controllers\WhyUsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BuilderController;
-
+use App\Http\Controllers\TeamController;
 
 // Route::get('/', function () {
 //     return view('index');
@@ -110,3 +110,7 @@ Route::post('/whyus/store', [WhyUsController::class, 'store'])->name('admin.whyu
 Route::get('/whyus/{id}/edit', [WhyUsController::class, 'edit'])->name('admin.whyus.edit');
 Route::put('/whyus/{id}', [WhyUsController::class, 'update'])->name('admin.whyus.update');
 Route::delete('/whyus/{id}', [WhyUsController::class, 'destroy'])->name('admin.whyus.destroy');
+Route::get('/team/create', [TeamController::class, 'create'])->name('team.create'); // صفحه فرم + لیست
+    Route::post('/team', [TeamController::class, 'store'])->name('team.store');
+    Route::put('/team/{teamMember}', [TeamController::class, 'update'])->name('team.update');
+    Route::delete('/team/{teamMember}', [TeamController::class, 'destroy'])->name('team.destroy');
