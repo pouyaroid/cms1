@@ -114,3 +114,7 @@ Route::get('/team/create', [TeamController::class, 'create'])->name('team.create
     Route::post('/team', [TeamController::class, 'store'])->name('team.store');
     Route::put('/team/{teamMember}', [TeamController::class, 'update'])->name('team.update');
     Route::delete('/team/{teamMember}', [TeamController::class, 'destroy'])->name('team.destroy');
+    Route::get('/products/create', [ProductController::class, 'create'])->name('products.create');
+    Route::post('/products', [ProductController::class, 'store'])->name('products.store');
+    Route::put('/products/{product}', [ProductController::class, 'update'])->name('products.update');
+    Route::delete('/products/{product}', [ProductController::class, 'destroy'])->name('products.destroy');

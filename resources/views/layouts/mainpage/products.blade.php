@@ -1,87 +1,78 @@
 <section id="products" class="products position-relative alternate overflow-hidden py-5">
-    <div class="container d-block">
+    <div class="container">
 
-        {{-- عنوان بخش --}}
-        <div class="title d-flex flex-column flex-md-row flex-wrap justify-content-between pt-5 px-3">
+        {{-- 🟢 عنوان بخش --}}
+        <div class="title d-flex flex-column flex-md-row flex-wrap justify-content-between align-items-center pt-5 px-3">
             <h3 class="line font-iransans-black col-12 col-md-6 my-0">محصولات ما</h3>
-            <span class="d-block col-12 col-md-6 lh-lg">
-                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است
+            <span class="d-block col-12 col-md-6 lh-lg text-muted text-md-end">
+                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
             </span>
         </div>
 
-        {{-- بک‌گراند --}}
-        <div class="shape-bg">
-            <img src="{{ asset('assets/images/shape5.png') }}" alt="shape background" />
+        {{-- 🟣 بک‌گراند تزئینی --}}
+        <div class="shape-bg position-absolute top-0 start-0 w-100 h-100 overflow-hidden">
+            <img src="{{ asset('assets/images/shape5.png') }}" class="w-100 h-100 object-fit-cover opacity-25" alt="shape background">
         </div>
 
-        <div class="d-flex flex-column flex-md-row justify-content-start pt-5">
-            {{-- کارت معرفی سمت راست --}}
-            <div class="d-block col-12 col-lg-3 col-md-4 p-3">
-                <div class="card d-flex flex-column justify-content-between align-items-center h-100 p-3">
-                    <h4 class="font-iransans-black">محصولات ویژه</h4>
-                    <img class="special-img my-4" src="{{ asset('assets/images/discount.svg') }}" alt="special products" />
-                    <span class="d-block mb-3">
-                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است
-                    </span>
-                    <a class="btn btn-primary w-100" href="#">مشاهده همه</a>
+        <div class="row position-relative pt-5">
+            {{-- 🟡 کارت معرفی ویژه --}}
+            <div class="col-12 col-md-4 col-lg-3 mb-4">
+                <div class="card h-100 text-center p-4 shadow-sm">
+                    <h4 class="font-iransans-black mb-3">محصولات ویژه</h4>
+                    <img src="{{ asset('assets/images/discount.svg') }}" class="my-3" width="80" alt="special products">
+                    <p class="small text-muted mb-4">
+                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ است.
+                    </p>
+                    <a href="#" class="btn btn-primary w-100">مشاهده همه</a>
                 </div>
             </div>
 
-            {{-- بخش محصولات --}}
-            <div class="col-12 col-lg-9 col-md-8">
-                <div class="products-slider d-flex flex-wrap">
-                    {{-- اگر دیتایی وجود دارد --}}
+            {{-- 🟢 بخش محصولات --}}
+            <div class="col-12 col-md-8 col-lg-9">
+                <div class="row">
                     @if(isset($products) && $products->count() > 0)
                         @foreach($products as $product)
-                            <div class="products-slider-item col-12 col-md-6 col-lg-3 p-3 mb-4">
-                                <div class="card p-2 h-100 d-flex flex-column justify-content-between">
-                                    <div class="header d-flex flex-row justify-content-center pt-3 mb-3">
-                                        <img class="img" 
-                                             src="{{ $product->image ? asset('storage/' . $product->image) : asset('assets/images/man1.png') }}" 
+                            <div class="col-12 col-sm-6 col-lg-4 mb-4">
+                                <div class="card h-100 p-3 shadow-sm d-flex flex-column justify-content-between">
+                                    <div class="text-center">
+                                        <img src="{{ $product->image ? asset('storage/' . $product->image) : asset('assets/images/man1.png') }}"
+                                             class="img-fluid rounded mb-3" 
                                              alt="{{ $product->title }}">
                                     </div>
-                                    <div class="body mb-3">
-                                        <h6 class="d-block font-iransans-black text-center mb-2">{{ $product->title }}</h6>
-                                        <span class="d-block small lh-base px-2 mb-3 text-center">
-                                            {{ $product->description ?? 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است' }}
-                                        </span>
-                                        <h6 class="d-block font-iransans-black text-center">
-                                            {{ $product->price ?? 'تماس بگیرید' }}
-                                            @if(is_numeric($product->price))
-                                                <small>تومان</small>
-                                            @endif
+                                    <div class="text-center mb-3">
+                                        <h6 class="font-iransans-black mb-2">{{ $product->title }}</h6>
+                                        <p class="small text-muted">{{ Str::limit($product->description, 80) ?? 'توضیحات محصول در دسترس نیست.' }}</p>
+                                        <h6 class="fw-bold mt-3">
+                                            {{ $product->price ? number_format($product->price) . ' تومان' : 'تماس بگیرید' }}
                                         </h6>
                                     </div>
-                                    <a class="btn btn-primary w-100" 
-                                       href="{{ $product->link ?? '#' }}">مشاهده</a>
+                                    <a href="{{ $product->link ?? '#' }}" class="btn btn-outline-primary w-100 mt-auto">مشاهده</a>
                                 </div>
                             </div>
                         @endforeach
-
-                    {{-- در غیر این صورت از داده‌های پیش‌فرض --}}
                     @else
+                        {{-- 🔵 داده پیش‌فرض --}}
                         @php
                             $defaultProducts = [
-                                ['img' => 'man1.png', 'price' => '250,000,000', 'desc' => 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم...'],
-                                ['img' => 'woman2.png', 'price' => '190,000,000', 'desc' => 'متن ساختگی برای پر کردن فضای خالی طراحی...'],
-                                ['img' => 'man2.png', 'price' => '210,000,000', 'desc' => 'محصول با کیفیت فوق‌العاده و طراحی حرفه‌ای...'],
-                                ['img' => 'man1.png', 'price' => '250,000,000', 'desc' => 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم...'],
+                                ['img' => 'man1.png', 'title' => 'محصول ۱', 'price' => '۲۵۰,۰۰۰', 'desc' => 'لورم ایپسوم متن ساختگی برای نمایش نمونه محصول'],
+                                ['img' => 'woman2.png', 'title' => 'محصول ۲', 'price' => '۱۹۰,۰۰۰', 'desc' => 'متن ساختگی جهت پر کردن محتوا در طراحی'],
+                                ['img' => 'man2.png', 'title' => 'محصول ۳', 'price' => '۲۱۰,۰۰۰', 'desc' => 'محصول با کیفیت فوق‌العاده و طراحی حرفه‌ای'],
+                                ['img' => 'man1.png', 'title' => 'محصول ۴', 'price' => '۲۵۰,۰۰۰', 'desc' => 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم'],
                             ];
                         @endphp
 
                         @foreach($defaultProducts as $item)
-                            <div class="products-slider-item col-12 col-md-6 col-lg-3 p-3 mb-4">
-                                <div class="card p-2 h-100 d-flex flex-column justify-content-between">
-                                    <div class="header d-flex flex-row justify-content-center pt-3 mb-3">
-                                        <img class="img" src="{{ asset('assets/images/' . $item['img']) }}" alt="product">
+                            <div class="col-12 col-sm-6 col-lg-4 mb-4">
+                                <div class="card h-100 p-3 shadow-sm d-flex flex-column justify-content-between">
+                                    <div class="text-center">
+                                        <img src="{{ asset('assets/images/' . $item['img']) }}" class="img-fluid rounded mb-3" alt="product">
                                     </div>
-                                    <div class="body mb-3">
-                                        <span class="d-block small lh-base px-2 mb-3 text-center">{{ $item['desc'] }}</span>
-                                        <h6 class="d-block font-iransans-black text-center">
-                                            {{ $item['price'] }} <small>تومان</small>
-                                        </h6>
+                                    <div class="text-center mb-3">
+                                        <h6 class="font-iransans-black mb-2">{{ $item['title'] }}</h6>
+                                        <p class="small text-muted">{{ $item['desc'] }}</p>
+                                        <h6 class="fw-bold mt-3">{{ $item['price'] }} <small>تومان</small></h6>
                                     </div>
-                                    <a class="btn btn-primary w-100" href="#">مشاهده</a>
+                                    <a href="#" class="btn btn-outline-primary w-100 mt-auto">مشاهده</a>
                                 </div>
                             </div>
                         @endforeach

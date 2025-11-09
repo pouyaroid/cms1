@@ -86,4 +86,9 @@ class ProductController extends Controller
 
         return redirect()->back()->with('success', 'محصول با موفقیت حذف شد.');
     }
+    public function create()
+{
+    $products = Product::latest()->get();
+    return view('admin.products.create', compact('products'));
+}
 }
