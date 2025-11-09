@@ -104,3 +104,9 @@ Route::prefix('admin')->name('admin.')->group(function () {
 });
 Route::get('/contact-messages', [ContactController::class, 'index'])->name('admin.contact.index');
 Route::delete('/contact-messages/{contactMessage}', [ContactController::class, 'destroy'])->name('admin.contact.destroy');
+Route::get('/whyus', [WhyUsController::class, 'index'])->name('admin.whyus.index');
+Route::get('/whyus/create', [WhyUsController::class, 'create'])->name('admin.whyus.create');
+Route::post('/whyus/store', [WhyUsController::class, 'store'])->name('admin.whyus.store');
+Route::get('/whyus/{id}/edit', [WhyUsController::class, 'edit'])->name('admin.whyus.edit');
+Route::put('/whyus/{id}', [WhyUsController::class, 'update'])->name('admin.whyus.update');
+Route::delete('/whyus/{id}', [WhyUsController::class, 'destroy'])->name('admin.whyus.destroy');
