@@ -102,3 +102,5 @@ Route::prefix('admin')->group(function () {
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('contacts', ContactNumberController::class);
 });
+Route::get('/contact-messages', [ContactController::class, 'index'])->name('admin.contact.index');
+Route::delete('/contact-messages/{contactMessage}', [ContactController::class, 'destroy'])->name('admin.contact.destroy');
