@@ -10,7 +10,7 @@ use App\Http\Controllers\HeroBannerController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\OpinionController;
-use App\Http\Controllers\PlanController;
+
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProductController;
@@ -21,6 +21,7 @@ use App\Http\Controllers\BuilderController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\TeamController;
+use App\Http\Controllers\PlanController;
 
 // Route::get('/', function () {
 //     return view('index');
@@ -145,3 +146,19 @@ Route::get('/team/create', [TeamController::class, 'create'])->name('team.create
     Route::get('opinions/{opinion}/edit', [OpinionController::class, 'edit'])->name('admin.opinions.edit');
     Route::put('opinions/{opinion}', [OpinionController::class, 'update'])->name('admin.opinions.update');
     Route::delete('opinions/{opinion}', [OpinionController::class, 'destroy'])->name('admin.opinions.destroy');
+    Route::get('/plans', [PlanController::class, 'index'])->name('index');
+
+    // فرم ایجاد تعرفه جدید
+    Route::get('/plans/create', [PlanController::class, 'create'])->name('create');
+
+    // ذخیره تعرفه جدید
+    Route::post('/plans', [PlanController::class, 'store'])->name('store');
+
+    // فرم ویرایش تعرفه
+    Route::get('/plans/{plan}/edit', [PlanController::class, 'edit'])->name('plans.edit');
+
+    // به‌روزرسانی تعرفه
+    Route::put('/plans/{plan}', [PlanController::class, 'update'])->name('update');
+
+    // حذف تعرفه
+    Route::delete('/plans/{plan}', [PlanController::class, 'destroy'])->name('plans.destroy');
