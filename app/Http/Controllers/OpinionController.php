@@ -4,17 +4,29 @@ namespace App\Http\Controllers;
 
 use App\Models\Opinion;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class OpinionController extends Controller
 {
     // نمایش در سایت
     public function index()
     {
-        $opinions = Opinion::latest()->take(6)->get(); // حداکثر ۶ تا برای نمایش
+        $opinions = Opinion::latest()->take(6)->get();
         return view('sections.opinion', compact('opinions'));
     }
 
-    
+    // مدیریت ادمین
+    public function adminIndex()
+    {
+        $opinions = Opinion::latest()->get();
+        return view('admin.opinions.index', compact('opinions'));
+    }
+
+    public function create()
+    {
+        return view('admin.opinions.create');
+    }
+
     public function store(Request $request)
     {
         $request->validate([
@@ -25,10 +37,7 @@ class OpinionController extends Controller
             'date' => 'nullable|date',
         ]);
 
-        $avatarPath = null;
-        if ($request->hasFile('avatar')) {
-            $avatarPath = $request->file('avatar')->store('avatars', 'public');
-        }
+        $avatarPath = $request->hasFile('avatar') ? $request->file('avatar')->store('avatars', 'public') : null;
 
         Opinion::create([
             'name' => $request->name,
@@ -38,19 +47,24 @@ class OpinionController extends Controller
             'date' => $request->date,
         ]);
 
-        return redirect()->back()->with('success', 'نظر با موفقیت ثبت شد.');
+        return redirect()->route('admin.opinions.index')->with('success', 'نظر با موفقیت ثبت شد.');
     }
+
+    public function edit(Opinion $opinion)
+    {
+        return view('admin.opinions.edit', compact('opinion'));
+    }
+
     public function update(Request $request, Opinion $opinion)
     {
         $request->validate([
-            'name'    => 'required|string|max:255',
-            'role'    => 'nullable|string|max:255',
+            'name' => 'required|string|max:255',
+            'role' => 'nullable|string|max:255',
             'comment' => 'required|string',
-            'avatar'  => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
-            'date'    => 'nullable|date',
+            'avatar' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+            'date' => 'nullable|date',
         ]);
 
-       
         if ($request->hasFile('avatar')) {
             if ($opinion->avatar && Storage::disk('public')->exists($opinion->avatar)) {
                 Storage::disk('public')->delete($opinion->avatar);
@@ -59,25 +73,23 @@ class OpinionController extends Controller
         }
 
         $opinion->update([
-            'name'    => $request->name,
-            'role'    => $request->role,
+            'name' => $request->name,
+            'role' => $request->role,
             'comment' => $request->comment,
-            'avatar'  => $opinion->avatar,
-            'date'    => $request->date,
+            'avatar' => $opinion->avatar,
+            'date' => $request->date,
         ]);
 
-        return redirect()->back()->with('success', 'نظر با موفقیت به‌روزرسانی شد.');
+        return redirect()->route('admin.opinions.index')->with('success', 'نظر با موفقیت به‌روزرسانی شد.');
     }
 
- 
     public function destroy(Opinion $opinion)
     {
         if ($opinion->avatar && Storage::disk('public')->exists($opinion->avatar)) {
             Storage::disk('public')->delete($opinion->avatar);
         }
-
         $opinion->delete();
 
-        return redirect()->back()->with('success', 'نظر با موفقیت حذف شد.');
+        return redirect()->route('admin.opinions.index')->with('success', 'نظر با موفقیت حذف شد.');
     }
 }

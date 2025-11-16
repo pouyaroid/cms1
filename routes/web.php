@@ -138,3 +138,10 @@ Route::get('/team/create', [TeamController::class, 'create'])->name('team.create
     Route::get('/customers/{id}/edit', [CustomerController::class, 'edit'])->name('admin.customers.edit');
     Route::put('/customers/{id}', [CustomerController::class, 'update'])->name('admin.customers.update');
     Route::delete('/customers/{id}', [CustomerController::class, 'destroy'])->name('admin.customers.destroy');
+
+    Route::get('opinions', [OpinionController::class, 'adminIndex'])->name('admin.opinions.index');
+    Route::get('opinions/create', [OpinionController::class, 'create'])->name('admin.opinions.create');
+    Route::post('opinions', [OpinionController::class, 'store'])->name('admin.opinions.store');
+    Route::get('opinions/{opinion}/edit', [OpinionController::class, 'edit'])->name('admin.opinions.edit');
+    Route::put('opinions/{opinion}', [OpinionController::class, 'update'])->name('admin.opinions.update');
+    Route::delete('opinions/{opinion}', [OpinionController::class, 'destroy'])->name('admin.opinions.destroy');
