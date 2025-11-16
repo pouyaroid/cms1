@@ -5,14 +5,19 @@
         {{-- فیلتر دسته‌بندی --}}
         <div class="button-group filters-button-group text-center my-5">
             <button type="button" class="btn btn-light rounded-5 mx-1" data-filter="*">همه</button>
-            <button type="button" class="btn btn-light rounded-5 mx-1" data-filter=".web">وبسایت</button>
-            <button type="button" class="btn btn-light rounded-5 mx-1" data-filter=".mobile">اپ موبایل</button>
-            <button type="button" class="btn btn-light rounded-5 mx-1" data-filter=".app">اپلیکیشن</button>
+            @php
+                // گرفتن دسته‌بندی‌های یکتا از دیتابیس
+                $categories = $portfolios->pluck('category')->unique();
+            @endphp
+            @foreach($categories as $category)
+                <button type="button" class="btn btn-light rounded-5 mx-1" data-filter=".{{ $category }}">
+                    {{ $category }}
+                </button>
+            @endforeach
         </div>
 
         <div class="portfolio-grid" data-isotope='{ "itemSelector": ".portfolio-item", "layoutMode": "fitRows", "isOriginLeft": false }'>
 
-            {{-- اگر دیتابیس خالی بود، از تصاویر و اطلاعات پیش‌فرض استفاده کن --}}
             @if($portfolios->isEmpty())
                 @php
                     $defaults = [
@@ -26,7 +31,6 @@
                         ['img' => 'assets/images/portfolio/8.jpg', 'category' => 'app', 'title' => 'سیستم مدیریت محتوا', 'link' => '#'],
                     ];
                 @endphp
-
                 @foreach ($defaults as $item)
                     <div class="portfolio-item {{ $item['category'] }} col-6 col-md-3 p-1">
                         <img class="w-100" src="{{ asset($item['img']) }}" alt="{{ $item['title'] }}">
@@ -39,8 +43,6 @@
                         </div>
                     </div>
                 @endforeach
-
-            {{-- اگر در دیتابیس داده وجود داشت --}}
             @else
                 @foreach ($portfolios as $item)
                     <div class="portfolio-item {{ $item->category }} col-6 col-md-3 p-1">

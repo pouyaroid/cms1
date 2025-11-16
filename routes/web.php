@@ -162,3 +162,20 @@ Route::get('/team/create', [TeamController::class, 'create'])->name('team.create
 
     // حذف تعرفه
     Route::delete('/plans/{plan}', [PlanController::class, 'destroy'])->name('plans.destroy');
+
+    Route::get('/portfolio', [PortfolioController::class, 'index'])->name('index');
+
+    // فرم ایجاد نمونه‌کار جدید
+    Route::get('/portfolio/create', [PortfolioController::class, 'create'])->name('create');
+
+    // ذخیره نمونه‌کار جدید
+    Route::post('/portfolio', [PortfolioController::class, 'store'])->name('store');
+
+    // فرم ویرایش نمونه‌کار
+    Route::get('/portfolio/{portfolio}/edit', [PortfolioController::class, 'edit'])->name('edit');
+
+    // به‌روزرسانی نمونه‌کار
+    Route::put('/portfolio/{portfolio}', [PortfolioController::class, 'update'])->name('update');
+
+    // حذف نمونه‌کار
+    Route::delete('/portfolio/{portfolio}', [PortfolioController::class, 'destroy'])->name('destroy');
