@@ -18,6 +18,7 @@ use App\Http\Controllers\SiteSettingController;
 use App\Http\Controllers\WhyUsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BuilderController;
+use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\TeamController;
 
@@ -131,3 +132,9 @@ Route::get('/team/create', [TeamController::class, 'create'])->name('team.create
     Route::get('/faqs/{faq}/edit', [FaqController::class, 'edit'])->name('faqs.edit');
     Route::put('/faqs/{faq}', [FaqController::class, 'update'])->name('faqs.update');
     Route::delete('/faqs/{faq}', [FaqController::class, 'destroy'])->name('faqs.destroy');
+    Route::get('/customers', [CustomerController::class, 'adminIndex'])->name('admin.customers.index');      // لیست ادمین
+    Route::get('/customers/create', [CustomerController::class, 'create'])->name('admin.customers.create');
+    Route::post('/customers', [CustomerController::class, 'store'])->name('admin.customers.store');
+    Route::get('/customers/{id}/edit', [CustomerController::class, 'edit'])->name('admin.customers.edit');
+    Route::put('/customers/{id}', [CustomerController::class, 'update'])->name('admin.customers.update');
+    Route::delete('/customers/{id}', [CustomerController::class, 'destroy'])->name('admin.customers.destroy');
