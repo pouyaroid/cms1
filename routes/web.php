@@ -18,6 +18,7 @@ use App\Http\Controllers\SiteSettingController;
 use App\Http\Controllers\WhyUsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BuilderController;
+use App\Http\Controllers\FaqController;
 use App\Http\Controllers\TeamController;
 
 // Route::get('/', function () {
@@ -118,3 +119,15 @@ Route::get('/team/create', [TeamController::class, 'create'])->name('team.create
     Route::post('/products', [ProductController::class, 'store'])->name('products.store');
     Route::put('/products/{product}', [ProductController::class, 'update'])->name('products.update');
     Route::delete('/products/{product}', [ProductController::class, 'destroy'])->name('products.destroy');
+    // Route::get('/hero', [HeroBannerController::class, 'adminIndex'])->name('admin.hero.index');
+    // Route::get('/hero/create', [HeroBannerController::class, 'create'])->name('admin.hero.create');
+    // Route::post('/hero', [HeroBannerController::class, 'store'])->name('admin.hero.store');
+    // Route::get('/hero/{id}/edit', [HeroBannerController::class, 'edit'])->name('admin.hero.edit');
+    // Route::put('/hero/{id}', [HeroBannerController::class, 'update'])->name('admin.hero.update');
+    // Route::delete('/hero/{id}', [HeroBannerController::class, 'destroy'])->name('admin.hero.destroy');
+    Route::get('/faqs', [FaqController::class, 'index'])->name('faqs.index');
+    Route::get('/faqs/create', [FaqController::class, 'create'])->name('faqs.create');
+    Route::post('/faqs', [FaqController::class, 'store'])->name('faqs.store');
+    Route::get('/faqs/{faq}/edit', [FaqController::class, 'edit'])->name('faqs.edit');
+    Route::put('/faqs/{faq}', [FaqController::class, 'update'])->name('faqs.update');
+    Route::delete('/faqs/{faq}', [FaqController::class, 'destroy'])->name('faqs.destroy');
